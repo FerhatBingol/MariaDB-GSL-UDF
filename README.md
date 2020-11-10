@@ -7,9 +7,7 @@ Better documentation is coming soon!
 2020-11-10: The first added group is GSL_SF (GNU Scientific Library / Special Functions) for MariaDB. Each special function group from GSL is wrapped in exactly the same symbols of each group. The function names are altered with an initial "M". For example "gsl_sf_gamma" function becomes "Mgsl_sf_gamma" function in this UDF code. 
 
 ## Usage: 
-For now, just explore the code and header information for to see how to compile, install and load! (Requirements: mariadb-server >10.5, libmariadb-dev, gsl).
-
-But basically what is expected to use is (with examples):
+For now, just explore the code and header information for to see how to compile, install and load! (Requirements: mariadb-server >10.5, libmariadb-dev, gsl). But basically what is expected to use is:
 ### COMPILE:
     gcc -o Mgsl_sf_XXXX.so -DHAVE_DLOPEN -Wall -shared -lstdc++  Mgsl_sf_XXXX.c  -I/usr/include/mariadb -I/usr/include -I. -fPIC -lgsl
 ### INSTALL:
