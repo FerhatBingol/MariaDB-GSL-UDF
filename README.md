@@ -1,5 +1,5 @@
-# Scientific MariaDB
-This repo is for my MariaDB UDF wrappers based on different scientific libraries (mostly in C). Better documentation is coming soon. 
+# Scientific DB
+This repo is for my database user defined function (UDF) wrappers, procedures based on different scientific libraries (mostly in C). I mostly use MariaDB for large files and PostgreSQL for GIS data and SQlite for quick use. You can find UDF for all these database servers here. Better documentation is coming soon. 
 
 2020-11-10: The first added group is GSL_SF (GNU Scientific Library / Special Functions). Each special function group from GSL is wrapped in exactly the same symbols of each group. The function names are altered with a initial "M". For example "gsl_sf_gamma" function becomes "Mgsl_sf_gamma" function in this UDF code. 
  
