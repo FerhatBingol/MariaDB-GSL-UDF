@@ -1,5 +1,5 @@
 # Scientific DB
-This repo is for my database user defined function (UDF) and procedures based on different scientific libraries (mostly C origined). I use MariaDB for large files, PostgreSQL for GIS data and SQlite for quick use. You can find - as the repo name explains - UDF for scientific computation for common databases here. 
+This repo is for my database user defined functions (UDF) and procedures based on different scientific libraries (mostly C origined). I use MariaDB for large files, PostgreSQL for GIS data and SQlite for quick use. You can find - as the repo name explains - UDF for scientific computation for common databases here. 
 
 Better documentation is coming soon!
 
