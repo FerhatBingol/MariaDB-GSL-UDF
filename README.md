@@ -6,7 +6,7 @@ I use MariaDB for large files, PostgreSQL for GIS data and SQlite for quick use.
 Better documentation is coming soon!
 
 ## Logbook:
-2020-11-10: The first added group is GSL_SF (GNU Scientific Library / Special Functions) for MariaDB. Each special function group from GSL is wrapped in exactly the same symbols of each group. The function names are altered with a initial "M". For example "gsl_sf_gamma" function becomes "Mgsl_sf_gamma" function in this UDF code. (Requirements: mariadb-server >10.5, libmariadb-dev, gsl).
+2020-11-10: The first added group is GSL_SF (GNU Scientific Library / Special Functions) for MariaDB. Each special function group from GSL is wrapped in exactly the same symbols of each group. The function names are altered with an initial "M". For example "gsl_sf_gamma" function becomes "Mgsl_sf_gamma" function in this UDF code. (Requirements: mariadb-server >10.5, libmariadb-dev, gsl).
  
 ## Usage: 
 For now, just explore the code and header information for to see how to compile, install and load! But basically what is expected to use is (with examples):
