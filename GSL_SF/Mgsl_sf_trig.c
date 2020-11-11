@@ -1,3 +1,12 @@
+/* MariaDB UDF PACKAGE
+	by	Ferhat Bingöl 
+      ferhatbingol@ustunenerji.com
+
+    USTUN Energy Engineering LLC 
+    www.USTUNEnerji.com
+    Protected with AGPL-3.0 License
+*/
+
 /* MARIADB UDF: WRAPPER FOR /usr/include/gsl/gsl_sf_trig.h
 -------------------------------------------------------------------
 COMPILE:
