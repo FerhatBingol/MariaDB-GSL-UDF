@@ -91,4 +91,7 @@ We get the result literaly in no-second! This is fast enough when you compare to
 ##License
 
 This code is distributed under The GNU Affero General Public License. 
+(c) Ferhat Bingöl, ÜSTÜN ENERGY ENGINEERING LLC, IZMIR, TURKEY
+WWW.USTUNENERGY.COM
+
 
