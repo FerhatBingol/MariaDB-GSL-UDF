@@ -1,8 +1,0 @@
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/install/strip.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/install/local.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/install.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/list_install_components.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/rebuild_cache.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/edit_cache.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/uninstall.dir
-/home/enerji/github/Scientific-DB/GSL_SF/CMakeFiles/MSUDF.dir
