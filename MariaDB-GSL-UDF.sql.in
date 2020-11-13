@@ -1,9 +1,6 @@
 
 use mysql;
 
-DROP FUNCTION IF EXISTS ST_Boundary;
-CREATE FUNCTION ST_Boundary(geom GEOMETRY) returns geometry DETERMINISTIC return msudf_boundary(geom);
-
             DROP FUNCTION IF EXISTS Mgsl_sf_gegenpoly_1;
             CREATE function Mgsl_sf_gegenpoly_1 RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
             DROP FUNCTION IF EXISTS Mgsl_sf_gegenpoly_2;
@@ -31,8 +28,6 @@ CREATE FUNCTION ST_Boundary(geom GEOMETRY) returns geometry DETERMINISTIC return
             CREATE function Mgsl_sf_hyperg_2F1_renorm RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
             DROP FUNCTION IF EXISTS Mgsl_sf_hyperg_2F1_conj_renorm;
             CREATE function Mgsl_sf_hyperg_2F1_conj_renorm RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
-            DROP FUNCTION IF EXISTS M;
-            CREATE function M RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';   
 
             DROP FUNCTION IF EXISTS Mgsl_sf_laguerre_1;
             CREATE function Mgsl_sf_laguerre_1 RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
@@ -40,8 +35,7 @@ CREATE FUNCTION ST_Boundary(geom GEOMETRY) returns geometry DETERMINISTIC return
             CREATE function Mgsl_sf_laguerre_2 RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
             DROP FUNCTION IF EXISTS Mgsl_sf_laguerre_3;
             CREATE function Mgsl_sf_laguerre_3 RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            
-            DROP FUNCTION IF EXISTS M;
-            CREATE function M RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';      
+
 
             DROP FUNCTION IF EXISTS Mgsl_sf_log;
             CREATE function Mgsl_sf_log RETURNS REAL SONAME 'libMariaDB-GSL-UDF.so';            

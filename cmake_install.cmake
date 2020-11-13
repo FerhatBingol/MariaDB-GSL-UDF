@@ -55,6 +55,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 file(INSTALL DESTINATION "/usr/lib/x86_64-linux-gnu/libmariadb3/plugin" TYPE SHARED_LIBRARY FILES "/home/enerji/github/MariaDB-GSL-UDF/libMariaDB-GSL-UDF.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so"
+         OLD_RPATH "/usr/lib/x86_64-linux-gnu/libgsl.so:/usr/lib/x86_64-linux-gnu/libmariadb.so:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so")
     endif()
