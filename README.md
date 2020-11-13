@@ -2,7 +2,7 @@
 
 This is just-the-beginning of my efforts to attach GNU Scientific Library to Maria database. 
 
-I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Eurler's Gamma function or beta function).
+I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Gamma function or beta function).
 
 
 ## How to use the code
@@ -94,6 +94,6 @@ We get the result literaly in no-second! This is fast enough when you compare to
 
 This code is distributed under The GNU Affero General Public License. \
 (c) Ferhat Bingöl, ÜSTÜN ENERGY ENGINEERING LLC, IZMIR, TURKEY \
-WWW.USTUNENERGY.COM \
+WWW.USTUNENERGY.COM
 
 
