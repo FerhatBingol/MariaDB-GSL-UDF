@@ -67,7 +67,9 @@ In wind energy, the mean wind speed and mean power density of a location is calc
 
 ![Mean Power Density](P.gif)
 
-Let's say, the scale parameter A is 8.1m/s, the shape parameter is 2.3 and the we are observing a standart air density.  
+
+Let's say, the scale parameter A is 8.1 m/s, the dimensionless shape parameter is 2.3 and we are observing a standart air density.  
+
 ```
 SET @A=8.1;
 SET @k=2.3;
@@ -83,5 +85,10 @@ SELECT
 +------------------+--------------------+
 1 row in set (0.000 sec)
 ```
+
 We get the result literaly in no-second! This is fast enough when you compare to downloading data and having this process locally. 
+
+##License
+
+This code is distributed under The GNU Affero General Public License. 
 
