@@ -5,3 +5,4 @@ libMariaDB-GSL-UDF.so
 MariaDB-GSL-UDF.sql
 Makefile
 CMakeCache.txt
+CMakeFiles/*
