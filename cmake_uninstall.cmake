@@ -1,8 +1,8 @@
-if (NOT EXISTS "/home/enerji/github/Scientific-DB/GSL_SF/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"/home/enerji/github/Scientific-DB/GSL_SF/install_manifest.txt\"")
-endif(NOT EXISTS "/home/enerji/github/Scientific-DB/GSL_SF/install_manifest.txt")
+if (NOT EXISTS "/home/enerji/github/MariaDB-GSL-UDF/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"/home/enerji/github/MariaDB-GSL-UDF/install_manifest.txt\"")
+endif(NOT EXISTS "/home/enerji/github/MariaDB-GSL-UDF/install_manifest.txt")
 
-file(READ "/home/enerji/github/Scientific-DB/GSL_SF/install_manifest.txt" files)
+file(READ "/home/enerji/github/MariaDB-GSL-UDF/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 list(REVERSE files)
 foreach (file ${files})

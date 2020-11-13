@@ -1,4 +1,4 @@
-# Install script for directory: /home/enerji/github/Scientific-DB/GSL_SF
+# Install script for directory: /home/enerji/github/MariaDB-GSL-UDF
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -52,7 +52,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/lib/x86_64-linux-gnu/libmariadb3/plugin" TYPE SHARED_LIBRARY FILES "/home/enerji/github/Scientific-DB/GSL_SF/libMariaDB-GSL-UDF.so")
+file(INSTALL DESTINATION "/usr/lib/x86_64-linux-gnu/libmariadb3/plugin" TYPE SHARED_LIBRARY FILES "/home/enerji/github/MariaDB-GSL-UDF/libMariaDB-GSL-UDF.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/x86_64-linux-gnu/libmariadb3/plugin/libMariaDB-GSL-UDF.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -72,5 +72,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/enerji/github/Scientific-DB/GSL_SF/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/enerji/github/MariaDB-GSL-UDF/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
