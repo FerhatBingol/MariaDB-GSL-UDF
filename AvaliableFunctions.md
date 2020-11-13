@@ -1,4 +1,4 @@
-No	NAME
+```
 1	Mgsl_sf_gegenpoly_1
 2	Mgsl_sf_gegenpoly_2
 3	Mgsl_sf_gegenpoly_3
@@ -137,3 +137,4 @@ No	NAME
 136	Mgsl_sf_lnbeta
 137	Mgsl_sf_beta
 138	Mgsl_sf_beta_inc
+```

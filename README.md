@@ -2,7 +2,7 @@
 
 This is just-the-beginning of my efforts to attach GNU Scientific Library (GSL)[[1]]#1 to the MariaDB[[2]]#2 database. 
 
-I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Gamma function or beta function).
+I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Gamma function or beta function). See [here](https://github.com/FerhatBingol/MariaDB-GSL-UDF/blob/main/AvaliableFunctions.md) for currently avaliable GSL functions. 
 
 
 ## How to use the code
