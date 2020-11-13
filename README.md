@@ -1,6 +1,6 @@
 # MariaDB-GSL-UDF
 
-This is just-the-beginning of my efforts to attach GNU Scientific Library to Maria database. 
+This is just-the-beginning of my efforts to attach GNU Scientific Library (GSL)[[1]]#1 to the MariaDB[[2]]#2 database. 
 
 I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Gamma function or beta function).
 
@@ -61,7 +61,7 @@ Move library to your plugin directory and run the SQL command above (there is no
 
 
 ## Basic Usage Example
-In wind energy, the mean wind speed and mean power density of a location is calculated from Weibull distribution parameters with two formulas that include Gamma function. A and k are the scale paramaters, respectively. ρ is the air density (standart 1.255 kg/m3).
+In wind energy, the mean wind speed and mean power density of a location is calculated from Weibull distribution parameters with two formulas that include Gamma function[[3]](#1). A and k are the scale paramaters, respectively. ρ is the air density (standart 1.255 kg/m3).
 
 
 ![Mean Wind Speed](U.gif)
@@ -96,4 +96,14 @@ This code is distributed under The GNU Affero General Public License. \
 (c) Ferhat Bingöl, ÜSTÜN ENERGY ENGINEERING LLC, IZMIR, TURKEY \
 WWW.USTUNENERGY.COM
 
+## References
+
+<a id="1">[1]</a>
+https://www.gnu.org/software/gsl/
+<a id="2">[2]</a> 
+https://mariadb.org/
+<a id="3">[3]</a> 
+Ferhat Bingöl, "Comparison of Weibull Estimation Methods for Diverse Winds", 
+Advances in Meteorology, vol. 2020, 11 pages, 2020. 
+https://doi.org/10.1155/2020/3638423
 
