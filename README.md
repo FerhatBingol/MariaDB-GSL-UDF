@@ -1,27 +1,61 @@
-# Scientific DB
-This repo is for my database user defined functions (UDF) and procedures based on different scientific libraries (mostly C origined). I use MariaDB for large files, PostgreSQL for GIS data and SQlite for quick use. You can find - as the repo name explains - UDF for scientific computation for common databases here. 
+# MariaDB-GSL-UDF
 
-Better documentation is coming soon!
+This is just-the-beginning of my efforts to attach GNU Scientific Library to Maria database. 
 
-## Logbook:
-2020-11-10: The first added group is GSL_SF (GNU Scientific Library / Special Functions) for MariaDB. Each special function group from GSL is wrapped in exactly the same symbols of each group. The function names are altered with an initial "M". For example "gsl_sf_gamma" function becomes "Mgsl_sf_gamma" function in this UDF code. 
-
-## Usage: 
-For now, just explore the code and header information for to see how to compile, install and load! (Requirements: mariadb-server >10.5, libmariadb-dev, gsl). But basically what is expected to use is:
-### COMPILE:
-    gcc -o Mgsl_sf_XXXX.so -DHAVE_DLOPEN -Wall -shared -lstdc++  Mgsl_sf_XXXX.c  -I/usr/include/mariadb -I/usr/include -I. -fPIC -lgsl
-### INSTALL:
-    sudo ln -s Mgsl_sf_XXXX.so /usr/lib/mysql/plugin/Mgsl_sf_XXXX.so
-    sudo service mariadb restart
-### LOAD:
-    DROP FUNCTION IF EXISTS Mgsl_sf_XXXX;
-    CREATE function Mgsl_sf_XXXX RETURNS REAL SONAME 'Mgsl_sf_XXXX.so';  
-### USE:
-    SELECT Mgsl_sf_XXXX(column);
-
- 
-## About GSL Functions : 
-My code is just wrappers so it does not check the input parameters. Please, refer to the official GSL documentation https://www.gnu.org/software/gsl/doc/html/specfunc.html before you use the functions.
+I have started with the Special Functions which we need to use within SQL queries. Without this UDFs one has to download the data to the client and process with a basic scientific function (e.g. Eurler's Gamma function or beta function).
 
 
+## How to use the code
+
+You need to:
+- Compile the code
+- Copy the library file to MariaDB plugin directory 
+- Activate the functions with an SQL execution
+
+The code is for
+- MariaDB > 10.5
+- GSL > 2.5
+- I did not test on Windows
+
+### Compile, install and test
+Below first line will prepare the Makefile and the other two will install it.  
+```
+$ cmake CMakeList.txt
+$ make
+$ make install
+```
+
+Before any further you need to check the plugin directory. Above code has just used mariadb-config for detecting the plugin directory and copy the compiled library to that directory. But if you have setup a binary version of MariaDB (instead of compling yourself) default plugin directory might be different. Therefore, first learn the plugin directory with:
+
+```
+$ mariadb-config --plugindir
+```
+which returns /usr/lib/x86_64-linux-gnu/libmariadb3/plugin on Ubuntu 20.04 with MariaDB 10.5.7. To set this plugin directory you need to find and edit the default my.cnf config file with
+
+```
+$ locate my.cnf  # return /etc/mysql/my.cnf
+$ sudo nano /etc/mysql/my.cnf
+```
+
+and add this to the end of the config file
+
+```
+[mysqld]
+plugin_dir=/usr/lib/x86_64-linux-gnu/libmariadb3/plugin
+```
+
+Now, save, exit and restart mariadb server
+
+```
+$ sudo service mariadb restart
+```
+
+Thereafter, you are ready to install the new functions via
+```
+$ mysql
+mysql> source MariaDB-GSL-UDF.sql
+```
+
+### Usage of binary release
+Move library to your plugin directory and run the command above
 
