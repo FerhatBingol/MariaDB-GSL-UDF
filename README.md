@@ -61,9 +61,27 @@ Move library to your plugin directory and run the SQL command above (there is no
 
 
 ## Basic Usage Example
-In wind energy, the mean wind speed and mean power density of a location is calculated from Weibull distribution parameters with two formulas that include Gamma function. 
+In wind energy, the mean wind speed and mean power density of a location is calculated from Weibull distribution parameters with two formulas that include Gamma function. A and k are the scale paramaters, respectively. ρ is the air density (standart 1.255 kg/m3).
 
 ![Mean Wind Speed](U.gif)
 
 ![Mean Power Density](P.gif)
+
+Let's say, the scale parameter A is 8.1m/s, the shape parameter is 2.3 and the we are observing a standart air density.  
+```
+SET @A=8.1;
+SET @k=2.3;
+
+SELECT 
+	@A*Mgsl_sf_gamma(1+1/@k) AS U,
+	0.5*1.255*POW(@A,3)*Mgsl_sf_gamma(1+3/@k) AS P;
+
++------------------+--------------------+
+| U                | P                  |
++------------------+--------------------+
+| 7.17590910524094 | 390.09255248067166 |
++------------------+--------------------+
+1 row in set (0.000 sec)
+```
+We get the result literaly in no-second! This is fast enough when you compare to downloading data and having this process locally. 
 
