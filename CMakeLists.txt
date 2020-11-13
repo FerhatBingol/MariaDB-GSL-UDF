@@ -3,11 +3,15 @@ project (MariaDB-GSL-UDF)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE)
 set(CMAKE_COLOR_MAKEFILE ON)
+set(HAVE_DYNAMIC_LOADING 1)
 
 message(STATUS "c++ compiler ... " ${CMAKE_C_COMPILER})
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
+
+
+
 
 if(WIN32)
     set(LIB_INSTALL_PATH ${CMAKE_CURRENT_BINARY_DIR}/lib/)
@@ -74,6 +78,7 @@ endif(MSVC)
 #/D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "STRICT" /D "_USRDLL" /D "_WINDLL" /D "_MBCS"-DCHANGE_BY_BISHOP
     
 add_definitions(-DSTRICT)
+add_definitions(-DHAVE_DLOPEN)
 
 add_custom_target(uninstall
     COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake)

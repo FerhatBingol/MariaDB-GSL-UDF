@@ -35,9 +35,7 @@ LOAD:
             DROP FUNCTION IF EXISTS Mgsl_sf_hyperg_2F1_renorm;
             CREATE function Mgsl_sf_hyperg_2F1_renorm RETURNS REAL SONAME 'Mgsl_sf_hyperg.so';            
             DROP FUNCTION IF EXISTS Mgsl_sf_hyperg_2F1_conj_renorm;
-            CREATE function Mgsl_sf_hyperg_2F1_conj_renorm RETURNS REAL SONAME 'Mgsl_sf_hyperg.so';            
-            DROP FUNCTION IF EXISTS M;
-            CREATE function M RETURNS REAL SONAME 'Mgsl_sf_hyperg.so';            
+            CREATE function Mgsl_sf_hyperg_2F1_conj_renorm RETURNS REAL SONAME 'Mgsl_sf_hyperg.so';                     
 -------------------------------------------------------------------
 */
 
@@ -122,13 +120,7 @@ LOAD:
             DLLEXP my_bool	Mgsl_sf_hyperg_2F1_conj_renorm_init	(UDF_INIT *initid,	UDF_ARGS *args,					char *message	);
             DLLEXP void		Mgsl_sf_hyperg_2F1_conj_renorm_deinit(UDF_INIT *initid													);
             DLLEXP double	Mgsl_sf_hyperg_2F1_conj_renorm		(UDF_INIT *initid,	UDF_ARGS *args,	char *is_null,	char *error		);
-            
-            // DLLEXP functions for 
-            // SRC FILE     : http://git.savannah.gnu.org/cgit/gsl.git/tree/specfunc/gsl_sf_hyperg.h
-            // SRC FUNCTION : double     gsl_sf_hyperg_2F0(const double a, const double b, const double x);
-            DLLEXP my_bool	M_init	(UDF_INIT *initid,	UDF_ARGS *args,					char *message	);
-            DLLEXP void		M_deinit(UDF_INIT *initid													);
-            DLLEXP double	M		(UDF_INIT *initid,	UDF_ARGS *args,	char *is_null,	char *error		);
+
             
 #ifdef	__cplusplus
 }
@@ -527,46 +519,5 @@ LOAD:
                     return *((double *)initid->ptr);
                 }
                 
-            // UDF functions for double     gsl_sf_hyperg_2F0(const double a, const double b, const double x);
-            my_bool M_init(UDF_INIT *initid,UDF_ARGS *args,char *message)
-            {
-                my_bool status;
 
-                if(args->arg_count!=3){
-                    strcpy(message,"ERROR:  needs 3 argument(s)");
-                    status = 1;
-                } 
-                else if(!(initid->ptr = malloc(sizeof(double))))
-                {
-                    initid->ptr = NULL;
-                    strcpy(message,"ERROR: M could not allocate memory for double");
-                    status = 1;
-                } 
-                else 
-                {
-                    initid->maybe_null= 1;
-                    initid->decimals= 5;                    
-                        args->arg_type[0]=REAL_RESULT;
-
-                        args->arg_type[1]=INT_RESULT;
-
-                        args->arg_type[2]=REAL_RESULT;
-
-                    *((double *)initid->ptr) = -999.9;
-                    status = 0;
-                }
-                return status;
-            }
-
-            
-                void M_deinit(UDF_INIT *initid)
-                {
-                    if(initid->ptr!=NULL)	free(initid->ptr);
-                }
-                    
-                double M(UDF_INIT *initid,	UDF_ARGS *args,	char *is_null,	char *error)
-                {
-                    *((double *)initid->ptr)=(*((const double *)args->args[0]),*((const int *)args->args[1]),*((const double *)args->args[2]));
-                    return *((double *)initid->ptr);
-                }
                 #endif /* HAVE_DLOPEN */
