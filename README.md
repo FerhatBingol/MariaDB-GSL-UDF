@@ -57,5 +57,5 @@ mysql> source MariaDB-GSL-UDF.sql
 ```
 
 ### Usage of binary release
-Move library to your plugin directory and run the SQL command above
+Move library to your plugin directory and run the SQL command above (there is no binary release yet!)
 
