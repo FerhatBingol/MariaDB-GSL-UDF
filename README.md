@@ -56,6 +56,14 @@ $ mysql
 mysql> source MariaDB-GSL-UDF.sql
 ```
 
-### Usage of binary release
+### Installation of binary release
 Move library to your plugin directory and run the SQL command above (there is no binary release yet!)
 
+
+## Basic Usage Example
+In wind energy, the mean wind speed and mean power density of a location is calculated from Weibull distribution parameters with two formulas that include Gamma function. 
+![Mean Wind Speed](U.gif)
+![Mean Power Density](P.gif)
+
+!U=A.\Gamma \left ( 1+\frac{1}{k} \right )
+!P=\frac{1}{2} \rho A^{3} \Gamma \left ( 1+\frac{3}{k} \right )
