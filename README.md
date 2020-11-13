@@ -77,8 +77,8 @@ SET @A=8.1;
 SET @k=2.3;
 
 SELECT 
-	@A*Mgsl_sf_gamma(1+1/@k) AS U,
-	0.5*1.255*POW(@A,3)*Mgsl_sf_gamma(1+3/@k) AS P;
+	@A * Mgsl_sf_gamma(1+1/@k) AS U,
+	0.5 * 1.255 * POW(@A,3) * Mgsl_sf_gamma(1+3/@k) AS P;
 
 +------------------+--------------------+
 | U                | P                  |
