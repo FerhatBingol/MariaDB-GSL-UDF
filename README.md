@@ -99,11 +99,11 @@ WWW.USTUNENERGY.COM
 ## References
 
 <a id="1">[1]</a>
-https://www.gnu.org/software/gsl/
+https://www.gnu.org/software/gsl/ \
 <a id="2">[2]</a> 
-https://mariadb.org/
+https://mariadb.org/ \
 <a id="3">[3]</a> 
-Ferhat Bingöl, "Comparison of Weibull Estimation Methods for Diverse Winds", 
-Advances in Meteorology, vol. 2020, 11 pages, 2020. 
-https://doi.org/10.1155/2020/3638423
+Ferhat Bingöl, "Comparison of Weibull Estimation Methods for Diverse Winds", \
+Advances in Meteorology, vol. 2020, 11 pages, 2020. \
+https://doi.org/10.1155/2020/3638423\
 
